@@ -7,7 +7,7 @@ import Saludar from "./components/Saludar";
 
 function App() {
   const user = {
-    nombre: "Daniel Ángel",
+    // nombre: "Daniel Ángel",
     edad:29,
     color: "Rojo"
   };

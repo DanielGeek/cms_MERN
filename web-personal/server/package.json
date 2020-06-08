@@ -1,0 +1,8 @@
+{
+  "name": "backend",
+  "version": "0.0.1",
+  "description": "backend cms MERN",
+  "main": "index.js",
+  "author": "Daniel Angel",
+  "license": "MIT"
+}

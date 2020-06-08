@@ -16,11 +16,15 @@ function App() {
     console.log("Hola " + name);
   };
 
+  const dioBlur = () => {
+    alert('on blur!');
+  }
+
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <Saludar userInfo={user} saludarFn={saludarFn} />
+        <Saludar userInfo={user} saludarFn={saludarFn} dioBlur={dioBlur} />
       </header>
     </div>
   );

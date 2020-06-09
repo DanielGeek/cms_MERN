@@ -40,7 +40,7 @@ const routes = [
       },
       {
         path: "/contact",
-        componente: Contact,
+        component: Contact,
         exact: true
       }
     ]

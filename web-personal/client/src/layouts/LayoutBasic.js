@@ -3,7 +3,7 @@ import { Layout } from "antd";
 
 export default function LayoutBasic() {
   return <Layout>
-      <h2>Menu Sider</h2>
+      <h2>Menu Sider Basic User...</h2>
       <div>Contenido....</div>
       <h5>Footer...</h5>
   </Layout>;

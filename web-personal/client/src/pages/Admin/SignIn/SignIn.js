@@ -14,6 +14,16 @@ export default function SignIn() {
         <h1 className="sign-in__content-logo">
           <img src={Logo} alt="logo" />
         </h1>
+        <div className="sign-in__content-tabs">
+        <Tabs type="card">
+          <TabPane tab={<span>Entrar</span>} key="1">
+            Component LoginForm
+          </TabPane>
+          <TabPane tab={<span>Nuevo usuario</span>} key="2">
+            Component RegisterForm
+          </TabPane>
+        </Tabs>
+        </div>
       </Content>
     </Layout>
   );

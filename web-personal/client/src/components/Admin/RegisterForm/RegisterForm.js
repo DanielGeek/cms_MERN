@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Form, Icon, Input, Button, Checkbox, notificacion } from "antd";
+import { Form, Icon, Input, Button, Checkbox, notification } from "antd";
 import {
   emailValidation,
   minLengthValidation
@@ -37,33 +37,56 @@ export default function RegisterForm() {
   };
 
   const inputValidation = e => {
-      const { type, name } = e.target;
-    
-      if(type === "email") {
-          setFormValid({
-              ...formValid,
-              [name]: emailValidation(e.target)
-          });
-      }
+    const { type, name } = e.target;
 
-      if(type === "password") {
-        setFormValid({
-            ...formValid,
-            [name]: emailValidation(e.target, 6)
-        });
+    if (type === "email") {
+      setFormValid({
+        ...formValid,
+        [name]: emailValidation(e.target)
+      });
     }
 
-    if(type === "checkbox") {
-        setFormValid({
-            ...formValid,
-            [name]: e.target.checked
-        });
+    if (type === "password") {
+      setFormValid({
+        ...formValid,
+        [name]: emailValidation(e.target, 6)
+      });
+    }
+
+    if (type === "checkbox") {
+      setFormValid({
+        ...formValid,
+        [name]: e.target.checked
+      });
     }
   };
 
   const register = e => {
     e.preventDefault();
-    console.log(formValid);
+    const { email, password, repeatPassword, privacyPolicy } = formValid;
+    const emailVal = inputs.email;
+    const passwordVal = inputs.password;
+    const repeatPasswordVal = inputs.repeatPassword;
+    const privacyPolicyVal = inputs.privacyPolicy;
+
+    if (
+      !emailVal ||
+      !passwordVal ||
+      !repeatPasswordVal ||
+      !inputs.privacyPolicy
+    ) {
+      notification["error"]({
+        message: "Todos los campos son obligatorios"
+      });
+    } else {
+        if(passwordVal !== repeatPasswordVal) {
+            notification["error"]({
+                message: "Las contraseñas tienen que ser iguales."
+            });
+        } else {
+            // TO DO: Conectar con el API y registrar el usuario.
+        }
+    }
   };
 
   return (
